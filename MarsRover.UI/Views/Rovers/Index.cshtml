@@ -1,0 +1,42 @@
+﻿@model bool
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<div style="margin-bottom:60px;">
+	<form method="post" asp-action="Index" asp-controller="Rovers" role="form">
+		<div class="form-row">
+			<div class="form-group col-md-3">
+				<label for="txtX">X Kordinatı</label>
+				<input type="number" class="form-control" id="txtX" name="X" placeholder="Sadece Rakam Giriniz.">
+			</div>
+			<div class="form-group col-md-3">
+				<label for="txtY">Y Kordinatı</label>
+				<input type="number" class="form-control" id="txtY" name="Y" placeholder="Sadece Rakam Giriniz.">
+			</div>
+			<div class="form-group col-md-3">
+				<label for="txtWAY">YÖN</label>
+				<input type="text" class="form-control" id="txtWay" name="Way" placeholder="N-E-S-W">
+			</div>
+			<div class="form-group col-md-3">
+				<label for="inputEmail4">Komutlar</label>
+				<input type="text" class="form-control" id="txtDirective" name="RoverDirective" placeholder="LMMRMMLL">
+			</div>
+		</div>
+		<input type="submit" class="btn btn-primary" style="float:right" value="Gönder" />
+	</form>
+</div>
+<div>
+
+@if (Model == true)
+{
+	<div class="alert alert-primary" role="alert">
+		@ViewBag.Result
+	</div>
+}
+</div>
+
